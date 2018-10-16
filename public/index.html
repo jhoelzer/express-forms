@@ -11,12 +11,55 @@
     <form id="user-create-form" action="./api/user" method="post">
         
         <!-- Add user input fields here -->
-        <p>Email: <input type="text" name="email" class="input-field" id="email"></p>
-        <p>Username: <input type="text" name="username" class="input-field" id="username"></p>
-        <p>First Name: <input type="text" name="firstName" class="input-field" id="first"></p>
-        <p>Last Name: <input type="text" name="lastName" class="input-field" id="last"></p>
+        <fieldset>
+            <p>Username: <input type="text" name="username" class="input-field" id="username" autofocus></p>
+            <p>Email: <input type="email" name="email" class="input-field" id="email"></p>
+            <p>First Name: <input type="text" name="firstName" class="input-field" id="first"></p>
+            <p>Last Name: <input type="text" name="lastName" class="input-field" id="last"></p>
+            <p>Phone: <input type="tel" name="phone" class="input-field" id="phone"></p>
+            <p>Homepage: <input type="url" name="homepage" class="input-field" id="homepage"></p>
+            <p>Awesome Level: <input type="text" name="awesome" class="input-field" id="awesome" value="Maximum" disabled></p>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Prefered Contact Method: </legend>
+            <ul>
+                <li>
+                    <label for="email">Email</label>
+                    <input type="radio" name="emailContact" class="input-field-contact" id="emailContact">
+                </li>
+                <li>
+                    <label for="phone">Phone</label>
+                    <input type="radio" name="phoneContact" class="input-field-contact" id="phoneContact">
+                </li>
+            </ul>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Devices: </legend>
+            <p><input type="checkbox" name="devices" class="input-field" checked id="ios"> iOS (iPhone/iPad)</p>
+            <p><input type="checkbox" name="devices" class="input-field" id="android"> Android</p>
+            <p><input type="checkbox" name="devices" class="input-field" id="mac"> Mac</p>
+            <p><input type="checkbox" name="devices" class="input-field" id="windows"> Windows</p>
+            <p><input type="checkbox" name="devices" class="input-field" id="chrome"> Chrome OS (Chromebook)</p>
+            <p><input type="checkbox" name="devices" class="input-field" id="linux"> Linux</p>
+        </fieldset>
 
-        <button type="submit" class="button">Create User</button>
+        <fieldset>
+            <legend>User Type: </legend>
+            <select name="userType" multiple id="userType">
+                <option>User</option>
+                <option>Moderator</option>
+                <option>Administrator</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <p>Birth Year: <input type="number" name="birthYear" class="input-field" id="birthYear" min="1900" max="2018"></p>
+        </fieldset>
+
+        <button type="submit" class="button" id="submitButton">Create User</button>
+        <button type="reset" class="button" id="resetButton">Reset Form</button>
     </form>
 
     <script src="index.js"></script>

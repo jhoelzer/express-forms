@@ -20,6 +20,7 @@ app.post("/api/user", function (req, res) {
         users.push(req.body);
         res.status(201);
         res.send(req.body);
+        res.send(console.log("User successfully created"));
     }
     console.log(users);
 })
